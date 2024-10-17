@@ -195,4 +195,128 @@ console.log(`Los datos del producto son: \n
     comprador.Direccion = "Calle 16 de Septiembre #102,COl. Manantilaes, Huauchinango,Puebla,Mexico";
     console.log(`Verificamos si se realizaron cambios en el objeto COMPRADOR:`)
     console.table(comprador)
+
+    console.log("%c8.- Metodos para controlar la mutabilidad de los Objetos, Sellado (SEAL)", style_console);
+    //SIN EMBARGO, EN EL CASO QUE DESEAMOS PODER MODFICAR LOS VALORES DE LAS PROPIEDADES DEL OBJET, PÉRO NO SU ESTRUCTURA, USAREMOS SEAL
+    console.log("Objeto antes de ser modificado:")
+    console.table(pedido)
+    //SELLAMOS EL OBJETO
+    Object.seal(pedido)
+    // INTENTAMOS MODIFICAR SU ESTRUCTURA
+    pedido[`FechaPedido`] ="25/09/2024 11:05:03"
+    delete pedido[`Cantidad`]
+    console.log(`Verificamos si se realizaron los cambios en el objeto PEDIDO:`)
+    console.table(pedido)
+    // AHORA INTENTAMOS MODFIFICAR EL VALOR DE LAS PROPIEDADES
+    pedido.Cantidad = 5
+    console.log(`Verificamos si se realizaron los cambios en el objeto PEDIDO:`)
+    console.table(pedido)
+
+    // DESTRUCTURACION DE 2 O MAS OBJETOS
+    console.log("%c9-. Destructuración de 2 o más Objetos" ,style_console);
+
+    let {Precio: productoPrecio, Marca: productoMarca} = Producto
+    let {Correo: clienteCorreo, PaisOrigen: clientePais, SaldoActual: clienteSaldo, Tipo: clienteTipo} = comprador
+
+    // TRANSFORMAR VALORES CUANTITATIVOS EN CUALITATIVOS
+
+    if(productoPrecio>200)
+        productoPrecio = "Caro"
+
+    else
+        productoPrecio = "Barato"
+
+     if(clienteSaldo> 0)
+        clienteSaldo = "A favor"
+
+    else if (clienteSaldo <0)
+        clienteSaldo = "En contra"
+
+    else 
+        clienteSaldo = "Sin deuda"
+
+    // TRANSFORMAR VALORES CUALITATIVOS EN CUANTITATIVOS
+
+    let clienteNivel;
+
+    if(clienteTipo == "Premium")
+        clienteNivel = 1
+    if(clienteTipo == "Premium")
+        clienteNivel = 2
+     if(clienteTipo == "No identificado")
+        clienteNivel = 3
+
+    // CLASIFICAMOS AL CLIENTE POR SU PAIS DE ORIGEN
+    if (clientePais == "México")
+        clientePais = "Nacional"
+    else
+        clientePais = "Extranjero"
+
+    // OLE - OBJECT Literal ENHACEMENT
+    let datosClientePromociones = {clienteCorreo, clientePais, clienteNivel, clienteSaldo, productoMarca, productoPrecio}
+
+    // EL NUEVO OBJECTO QUE CREAMOS SERIA UN EJEMPLO DE LA INFORMACION QUE ENVIAREMOS AL AREA DE MARKETING PARA LA DIFUSION DE PROMPCIONES
+    console.log("Los datos del cliente y sus de compra son:")
+    console.table(datosClientePromociones)
+
+    // OPERACIONES SOBRE OBJETOS
+    // UNION DE OBJETOS
+
+    console.log("%c10-. Unión de objetos usando el metodo de asignación (ASSING", style_console);
+
+    console.log("Imprimimos la estructura y valores del Objecto PRODUCTO")
+    console.table(Producto);
+
+    console.log("Imprimimos la estructura y valores del Objecto PEDIDO")
+    console.table(pedido);
+     
+    // SUPUNIENDO QUE EL USUARIO YA REALIZO EL PAGO EL PEDIDO SE CONVERTRA EN UNA VENTA QUE REQUIERE INFORMACION DE AMBOS OBJECTOS
+    // IMPORTANTE: ASSING NO SOLO PERMITE LA FUSION DE DOS O MAS 
+
+    const Venta = Object.assign(Producto, pedido);
+    console.log("Consultamos este nuevo objeto VENTA ")
+    console.table(Venta)
+
+    // UNION DE OBJETOS USANDO SPEAD OPERATOR PARA EVITAR LA PERDIDA DE INFORMACION CON OBJETOS QUE CONCATENEN EL MISMO NOMBRE EN SUS PROPIEDADES
+    console.log("%c11.- Unión de Objetos usando SPEAD OPERATOR (...)", style_console);
+     // PARCHAMOS EL ERROR, REINICIANDO EL VALOR DEL PRODUCTO ID AL ORIGINAL 
+     //PRODUCTO.ID=100;
+
+     console.table(Producto)
+     console.table(comprador)
+     console.table(pedido)
+
+     const Venta2 =
+     {
+        Producto: {...Producto},
+        comprador: {...comprador},
+        pedido: {...pedido}
+     }
+
+     console.log("FUusionamos los 3 Objetos en uno nuevo, sin perdida de información")
+     console.log(Venta2)
+     console.table(Venta2)
+
+    console.log("%c11.- Mutabilidad POST unión de Objetos", style_console);
+
+    //VAMOS A VERFIFICAR EL STATUS DE MUTABLIDIDAD DE LOS OBJETOS
+
+    console.log("Vamos a verificar la mutabilidad del objeto PEDIDOO")
+    console.log(`Esta el objeto de Pedido Congelado?: ${Object.isFrozen(pedido)}`);
+    console.log(`Esta el objeto de Pedido Sellado?: ${Object.isSealed(pedido)}`);
+
+    console.log("Vamos a verificar la mutabilidad del objeto COMPRADOR")
+    console.log(`Esta el objeto de Pedido Congelado?: ${Object.isFrozen(comprador)}`);
+    console.log(`Esta el objeto de Pedido Sellado?: ${Object.isSealed(comprador)}`);
+
+
+    console.log("Vamos a verificar la mutabilidad del objeto PRODUCTO")
+    console.log(`Esta el objeto de Pedido Congelado?: ${Object.isFrozen(Producto)}`);
+    console.log(`Esta el objeto de Pedido Sellado?: ${Object.isSealed(Producto)}`);
+
+    // MODIFICAMOS LA ESTRUCTURA DEL PRODUCTO, AGREGANDO UNA NUEVA PROPIEDAD
+
+    Producto[`isLegacy`] = false
+    console.log(Producto)
+    console.log(Venta2);
  
