@@ -42,6 +42,24 @@ if(esPremium)
 else
 console.log("Es un usuario que recibe los servicios gratuitos");
 
+//3. NUMBRE
+var cantidad;
+const costo_producto =10.50
+let saldo_cuenta = -2500.40
+let monto_transaccion;
+
+console.warn("---- Tipo de Dato -NUMBER (Numeros, positivos, decimales, flotantes)")
+console.log(`Tu saldo al dia de hoy es de: ${saldo_cuenta}, (Tipo de dato = ${typeof(saldo_cuenta)})`);
+console.log(`El producto que had seleccionado cuesta: ${costo_producto}`)
+cantidad = 8;
+console.log(`Has elegido comprar: ${cantidad} de productos .`)
+console.log(`El importe total de la compra es: ${cantidad*costo_producto}`);
+saldo_cuenta=saldo_cuenta - (cantidad*costo_producto);
+console.log(`Tu nuevo saldo es de: ${saldo_cuenta}`);
+//El cliente realiza un abono de 1500
+monto_transaccion=1500;
+console.log(`Tu abono de : ${monto_transaccion} ha sido recibido, tu nuevo saldo es de: ${saldo_cuenta+monto_transaccion}`);
+
 // 4. STRING (Cadena de Caractés)
 const alumno = "Ailton Artiaga Quiroga"
 let producto;
@@ -79,5 +97,4 @@ console.log(`Mas adelante podemos transformar el contenido de los STRING usando 
 
      const numero =129;
      console.log(`Intentando realizar la suma de: numero + numeroGrande3, el resultado es ${BigInt(numero)+ numeroGrande3}`)
-
 
