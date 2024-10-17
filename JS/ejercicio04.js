@@ -232,3 +232,35 @@ console.table(estudiantes);*/
 
 // Intentamos modificar el nuevo arreglo que no ha sid congelado
 
+
+nuevoEstudiantes.unshift("Diego Tecorralco");
+console.table(nuevoEstudiantes);
+
+function filtrarPrimeros5(arregloEstudiantes)
+{
+    let listaFiltrada =[]
+    for ( let i=0; i=5; i++)
+    {
+        listaFiltrada.push(arregloEstudiantes[i]);
+    }
+
+    return listaFiltrada;
+       
+}
+
+// Filtrado de Datos - Transformación de datos
+console.log("%c12.- Filtrado de elementos dentro de un arreglo utilizando el metodo MAP, en el que necesitamos transformarlos",style_console);
+console.log("Imprimimos los elementos actuales de signosZodiacales:")
+console.table(signosZodiacales);
+// Que podemos hacer si necesitamos el mismo arreglo pero ahora con todos elementos con letras MAYUSCULAS
+console.table(signosZodiacales.map(signoZodiacal => signoZodiacal.toUpperCase()));
+
+/*Reduccion de elementos de un arreglo, se usa cuando debemos de hacver operaciones matematicas o cuantitativas a un arreglo
+como detener totales, la idea es reducir la lista a un valor mas simplificado */
+
+const costoListaCompras = [15,52,50,16.90,32.50,28,105,45.2,94.10]
+// Como podemos calcular la lista de compras (costos)
+
+console.log("Los precios son:")
+console.table(costoListaCompras);
+console.log(`El total de la compra es: ${costoListaCompras.reduce((total,precio) => total+precio,0)}`)
