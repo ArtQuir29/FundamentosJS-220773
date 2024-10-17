@@ -63,3 +63,82 @@ console.log(`Los datos del producto son: \n
 
     //Ahora leemos el obejto completo
     console.table(Producto);
+
+     //Para acceder a las propiedades del obejeto utlizamos un "." y el nombre de la propiedad a leer.
+
+     console.log("Accediendo a propiedades especificas del producto")
+     console.log(`Nombre completo del producto : ${Producto.Nombre} ${Producto.Marca} ${Producto.Modelo}`)
+     console.log(`Precio.${Producto.Precio}`)
+     if(Producto.Disponibilidad == 0)
+         console.log('Estatus:Agotado')
+     else
+     console.log(`Estatus: ${Producto_Stock} unidades disponibles`)
+ 
+ 
+ 
+ 
+ 
+     console.log("%c3.- Destructuracion de Objeto",style_console);
+     let Producto2 =
+     {
+         
+         clave:2300,
+         Nombre:"Gafas para el sol",
+         Marca: "Palmera",
+         Modelo:"Playa",
+         Precio: 361.25,
+         Disponibilidad: false,
+         Stock: 0,
+         SKU:"DZ5485-612",
+         Imagen: ".....",
+         Barcode:null,
+         Categorias:["Playa","Juvenil"]
+ 
+ 
+ 
+     }
+ 
+     let comprador=
+     {
+         Clave: 220773,
+         Nombre: "Ailton",
+         Apellido:"Artiaga ",
+         Tipo:"Frecuente",
+         Correo:"220773@utxicotepec.edu.mx",
+         PaisOrigen:"Mexico",
+         SaldoActual:14000.00
+     }
+ 
+     let pedido=
+     { 
+         ID: 6636,
+         Producto_clave:230365,
+         Comprador_clave:230365,
+         Cantidad: 2,
+         Estatus:"Carrito de compras",
+ 
+     }
+ 
+ 
+     // En base a los 3 obejetos necesitamos calcular el costo de la compra y si alcanza con el saldo a favor 
+ 
+     let{Precio: Producto_Precio2} = Producto2;
+     let{Cantidad: pedido_Cantidad}= pedido;
+     let{SaldoActual:Cliente_SaldoActual} = comprador;
+     let Costo_Compra=Producto_Precio * pedido_Cantidad;
+ 
+     console.log(`El cliente ha agregado a su carrito de compras ${pedido_Cantidad} unidades, con un costo total de:${Costo_Compra}`);
+ 
+     // Actualizar el valor de los objetos 
+ 
+     console.log("c%.- Actualizacion de los valosres de las propiedades de un Objeto.", style_console)
+ 
+     console.log(`El objeto actualmente tiene los siguientes valores: ${Producto2}`)
+     console.log(JSON.stringify(Producto2, null, 2));
+     console.log(`Por cuestiones de inflacion el cosoto del producto ha cambiado y debe ser actualizado... de $361.25 a $500.00 `)
+ 
+     //PARA MODIFICAR EL VALOR DE UN OBJETO HASTA CON IGUAL EL VALOR DEL OBJETO DE LA PROPIEDAD DESEADA
+ 
+     Producto2.Precio= 500.00;
+     console.log(`Los nuevos valores del producto son: ${Producto2}`);
+ 
