@@ -141,4 +141,58 @@ console.log(`Los datos del producto son: \n
  
      Producto2.Precio= 500.00;
      console.log(`Los nuevos valores del producto son: ${Producto2}`);
+
+      //¿PUEDO CAMBIAR NO SOLO EL VALOR SI NO EL TIPO DE DATO EN JAVASCRIPT?
+
+    console.log(`--------------------------------------------------------------------`)
+
+    console.log(`El objeto actualmente tiene los siguientes valores: ${Producto2}`)
+    let tipoDisponibilidad=typeof (Producto2.Disponibilidad)
+    console.log(`El tipo de disponiblidad es: ${tipoDisponibilidad}`)
+
+    console.log(JSON.stringify(Producto2, null, 2));
+    Producto2.Disponibilidad="SI";
+    let nuevoTipoDisponibilidad = typeof(Producto2.Disponibilidad)
+    console.log(Producto2);
+    console.log(`Elnuevo tipo de disponiblidad es: ${nuevoTipoDisponibilidad}`)
+
+    // AGREGAR NUEVAS PROPIEDADES AL OBJETO
+
+    console.log("C%.- Agregar nuevas propiedades al OBJETO", style_console);
+
+    // PARA AGREGAR UNA NUEVA PROPIEDAD UTILIZAREMOS EL NOMBRE DEL OBJETO, LOS CORCHETES Y EL NUEVO DE LA PROPIEDAD CON SU VALOR POR DEFECTO
+    console.log("Los datos del comprador son:")
+    console.table(comprador)
+    
+    comprador[`Direccion`] = "AV. Benito Juarez No. 1525, Interior 4D, Xicotepec fe Juaréz, Puebla, México"
+    comprador[`Tipo`] = "Nuevo cliente"
+    comprador [`ActivadaReciente`] = true
+    comprador [`TotalCompras`] = 3900.00
+
+    console.log("Despues de aver agrgado las propiedades Direccion, Tipo,ActivadaReciente y TotalCompras. . .")
+    console.table(comprador)
+
+    // ELIMINAR PROPIEDADES EXISTENTES DE UN OBJETO
+    console.log("Eliminar propiedades de un OBJETO")
+    console.log("La estructura y valores de los Objetos pedido son previos a la modificacion")
+    console.table(pedido)
+    delete pedido.tipoPago
+    console.log("Despues de la modificacion...")
+    console.table(pedido)
+
+// 
+     console.log("%c7-. Metodos para controlar la mutablidad de los objetos, Congelación (FREEZE)", style_console);
+    
+    // SI DESEAMOS NO PERMITIR QUE LOS OBJETOS SEAN MODIFICADOS NI EN ESTRUCTURA, NI EL VALOR, UTILIZAREMOS EL METODO FREEZE (congelar)
+    console.log(`La estructura actual del Objeto COMPRADOR es:`) 
+    console.table(comprador)
+    Object.freeze(comprador)
+
+    // INTENTAMOS AGREGAR, ELIMINAR O MODIFICAR LOS VALORES DE SUS PROPIEDADES
+
+    comprador.FechaUltimaCompra = "05/09/2024 10:15:25"
+    delete comprador.Tipo;
+    comprador.Direccion = "Calle 16 de Septiembre #102,COl. Manantilaes, Huauchinango,Puebla,Mexico";
+    console.log(`Verificamos si se realizaron cambios en el objeto COMPRADOR:`)
+    console.table(comprador)
  
