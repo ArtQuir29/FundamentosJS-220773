@@ -73,3 +73,66 @@ let matriz= [[1,2,3,4],['a','b','c','d']];
 
 console.log(matriz);
 console.table(matriz);
+
+console.log("Declarando una matriz irregular");
+
+const matrizIrregular=[["Juan","Pedro","Maria","Inés"],[true,false,null],[9.2]]
+
+console.log(matrizIrregular);
+console.table(matrizIrregular);
+
+// Accediendo a los valores de una matriz
+
+console.log("Leyendo las Propiedades de una Matriz Regular")
+console.log(`Elemento en la posición [0][0]: ${matriz[0][0]}`)
+console.log(`Elemento en la posición [1][2]: ${matriz[1][2]}`)
+
+//Accediendo a los valors de una matriz irregular
+console.log("Leyendo las Propiedades de una Matriz irregular")
+console.log(`Elemento en la posición [0][0]: ${matrizIrregular[0][2]}`)
+console.log(`Elemento en la posición [2][0]: ${matrizIrregular[2][0]}`)
+console.log(`Elemento en la posición [1][2](¿Es Maria mayor de edad?): ${matrizIrregular[1][2]}`)
+
+//Funciones y Metodos
+// Los metodos de un objeto son invocados usando un . y al termino se delimitan los parametros entr (), en caso de que no lleve (),  no es un metodo sino una propiedad 
+//
+console.log("%c4.-Funciones o metodos de los arrreglos (Array Methos or Array Functions)",  style_console);
+console.log("¿Como saber cual es el tamaño de un arreglo?")
+console.log(`meses es un arreglo de tamaño: ${mesesAnio.length}`)
+console.log(`arregloMisto es un arreglo de tamaño: ${arreglomixto.length}`)
+console.log(`¿Qué pasa con los arreglos multidimensionales?`)
+console.log(`Matriz es un arreglo de tamaño: ${matriz.length}`)
+console.log(`mmm, eso me da el tamaño de número de filas de la matriz, pero como saber el numero de columnas?: ${arreglomixto.length}`)
+console.log(`la matriz regular tiene un numero de ${matriz[0].length}`)
+console.log("Y para las  irregulares?")
+//Para saber la dimensión de una matriz irregulas podemos hacer el uso de ciclo
+let numeroFilas= matrizIrregular.length;
+for( let  i=0 ; i<numeroFilas; i++)
+    console.log(`La longitud de la fila ${i} es = ${matrizIrregular[i].length}`)
+
+console.log("%c5.-Agregar un nuevo elemento a un arreglo (PUSH)",  style_console);
+
+let estudiantes=["Angel Rufino" ,"Idai Vargas","Daniel Bravo","Esther Gonzáles", "Ailton Artiaga"]
+console.log("Los elementos actuales del arreglo son:")
+console.table(estudiantes)
+console.log("Agregamos a un nueco estudiante llamado: Abril Guzman")
+estudiantes.push("Abril Guzman")
+console.log("Despues de agregarla, los elementos del arreglo son: ")
+console.table(estudiantes)
+
+console.log("¿Qué pasa con los Mixtos")
+console.log("El arregloMixto actualmente tiene los siguientes elementos")
+console.table(arreglomixto);
+console.log("Agregamos la palabra: \"Hola\", como nuevo Elemento")
+arreglomixto.push("Hola")
+console.log("Y tambien agregamos el numero -311465165945158414959.4564894149641, siendo este un BigInt")
+arreglomixto.push(BigInt(-311465165945158414959.4564894149641))
+console.log("Despues de estas dos operaciones el arreglo queda con los siguentes elementos:")
+console.table(arreglomixto)
+
+console.log("%c6.-Agregar un nuevo elemento a un arreglo (UNSHIFT) en la posición inicial",  style_console);
+console.table(estudiantes)
+console.log("Ahora agregaremos a Abishai Flores, al comienzo del arreglo")
+estudiantes.unshift("Abishai Flores")
+console.log("La lista actual es :")
+console.table(estudiantes)
