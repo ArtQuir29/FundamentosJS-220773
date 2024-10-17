@@ -37,3 +37,39 @@ let arreglomixto=["String",5,86.25,-200,-.1586,Symbol("March"), 'Z', false,null,
 console.log(arreglomixto);
 console.table(arreglomixto);
 console.log(typeof(arreglomixto));
+
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[0] = ${arreglomixto[0]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[1] = ${arreglomixto[1]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[2] = ${arreglomixto[2]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[3] = ${arreglomixto[3]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[4] = ${arreglomixto[4]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[5] = ${arreglomixto[5].toString} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[6] = ${arreglomixto[6]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[7] = ${arreglomixto[7]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[8] = ${arreglomixto[8]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[9] = ${arreglomixto[9]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[10] = ${arreglomixto[10]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[11] = ${arreglomixto[11]} y es del tipo: ${(typeof(arreglomixto))}`)
+console.log("Verificamos los tipos de datos de los elementos del arreglo: ")
+console.log(`El dato en la posicion[12] = ${arreglomixto[12]} y es del tipo: ${(typeof(arreglomixto))}`)
+
+console.log("%c3.-Arreglos Multidimencionales (Matrices)",  style_console);
+// Una matriz es una estructura de datos multidimensional (tabla) de n columnas o m filas
+
+let matriz= [[1,2,3,4],['a','b','c','d']];
+// esta es una matriz regular de 4 x 4
+
+console.log(matriz);
+console.table(matriz);
